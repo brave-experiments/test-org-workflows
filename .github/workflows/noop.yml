@@ -1,10 +1,14 @@
 name: Print Message Workflow
 
-on: [push, pull_request]
+on: 
+  push:
+  pull_request:
+  issue_comment:
+    types: [created]
 
 jobs:
-    print:
-        runs-on: ubuntu-latest
-        steps:
-        - name: Print message
-          run: echo "This is a noop workflow"
+  print:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print message
+      run: echo "This is a noop workflow"
